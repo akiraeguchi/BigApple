@@ -1,17 +1,11 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e6d7ac">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7accb1">
     <div class="container">
-      <%= link_to 'BIG APPLE', root_path, class: "navbar-brand fas fa-apple-alt" %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </ul>
+      <%= link_to 'BIG APPLE', root_path, class: "navbar-brand text-dark font-weight-normal" %>
+      <div class="ml-auto">
+        <span class="h3"><%= link_to '', "https://twitter.com/GakugeiBigApple?s=20", class: 'fab fa-twitter-square nav-link text-dark' %></span>
+        <span class="h3"><%= link_to '', "https://instagram.com/bigapple_2021?utm_medium=copy_link", class: 'fab fa-instagram nav-link text-dark' %></span>
+        <span class="h3"><%= link_to '', "https://liff.line.me/1645278921-kWRPP32q/?accountId=894eidmu", class: 'fab fa-line nav-link text-dark' %></span>
       </div>
     </div>
   </nav>
