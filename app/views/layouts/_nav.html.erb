@@ -1,11 +1,20 @@
-<div class="navbar navbar-expand-lg navbar-light" style="background-color: #f5f5f5">
+<div class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ml-auto">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <ul class="navbar-nav mx-auto">
+        <li><%= link_to ' Home', root_path,class: 'fas fa-home nav-link text-light' %></li>
+        <li><%= link_to ' About', home_about_path,class: 'fas fa-link nav-link text-light' %></li>
+        <li><%= link_to ' Blog', blogs_path, class: 'fas fa-pencil-alt nav-link text-light' %></li>
+        <li><%= link_to ' Video', videos_path, class: 'fas fa-video nav-link text-light' %></li>
+        <li><%= link_to ' login', new_user_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
       </ul>
     </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
 </div>

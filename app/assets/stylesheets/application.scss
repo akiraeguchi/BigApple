@@ -26,16 +26,19 @@
 #container {
   width: 100%;
   height: 350px;
-  background-color: #cc887a;
   display: flex;
   justify-content: center;
 }
 
-#main-visual-text {
+.main-visual-left {
+  width: 350px;
+  height: 350px;
+  background-color: #cc887a;
   text-align: center;
+  padding-top: 100px;
 }
 
-.main-visual {
+.main-visual-right {
   width: 700px;
   height: 350px;
 }
