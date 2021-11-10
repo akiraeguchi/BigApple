@@ -2,6 +2,35 @@
 <%= render 'layouts/nav' %>
 
 <div class="container">
-  <h2>動画を投稿</h2>
-  <%= render 'form', video: @video %>
+  <div class="row">
+    <div class="col-md-4">
+      <h2>動画を投稿</h2>
+        <%= render 'form', video: @video %>
+    </div>
+    <div class="col-md-8">
+      <h2>動画一覧</h2>
+      <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th>タイトル</th>
+            <th>コメント</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @videos.each do |video| %>
+            <tr>
+              <td>
+                <%= link_to video.title, video_path(video), class: "video_#{video.id}" %>
+              </td>
+              <td><%= video.body %></td>
+              <td colspan="3">
+                <iframe width="350" height="250" src="https://www.youtube.com/embed/<%= video.youtube %>" frameborder="0" allowfullscreen></iframe>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
