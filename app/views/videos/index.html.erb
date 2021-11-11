@@ -3,11 +3,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <h2>動画を投稿</h2>
         <%= render 'form', video: @video %>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-9">
       <h2>動画一覧</h2>
       <table class="table table-inverse">
         <thead>
@@ -21,12 +21,17 @@
           <% @videos.each do |video| %>
             <tr>
               <td>
-                <%= link_to video.title, video_path(video), class: "video_#{video.id}" %>
+                <%= video.title %>
               </td>
-              <td><%= video.body %></td>
-              <td colspan="3">
+              <td>
+                <%= video.body %>
+              </td>
+              <td>
                 <iframe width="350" height="250" src="https://www.youtube.com/embed/<%= video.youtube %>" frameborder="0" allowfullscreen></iframe>
               </td>
+               <td>
+                 <%= link_to 'Destroy', video_path(video), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_video_#{video.id}"%>
+               </td>
             </tr>
           <% end %>
         </tbody>
