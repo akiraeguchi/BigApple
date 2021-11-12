@@ -1,5 +1,25 @@
+<%= render 'videos/main-visual' %>
+<%= render 'layouts/nav' %>
+
 <div class="container">
   <div class="row">
-    
+    <div class="col-md-12">
+      <h2 class="mt-4"><%= @video.title %></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table>
+        <td>
+          <iframe width="700" height="500" src="https://www.youtube.com/embed/<%= @video.youtube %>" class="mx-auto mt-4" frameborder="0" allowfullscreen></iframe>
+        </td>
+        <td style="word-break: break-all">
+          <h4 class="ml-4"><%= @video.body %></h4>
+          <div class="mt-5 ml-4">
+            <%= link_to '削除', video_path(@video), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_video_#{@video.id}"%>
+          </div>
+        </td>
+      </table>
+    </div>
   </div>
 </div>
