@@ -3,12 +3,16 @@
 
 <div class="container">
   <div class="row">
-    <h2 class="mt-10"><%= @blog.title %></h2>
-    <h4><%= @blog.name %></h4>
+    <div class="col-md-8 mt-4">
+      <h2 class="mt-10"><%= @blog.title %></h2>
+    </div>
+    <div class="col-md-4 mt-5">
+      <h6><%= @blog.name %></h6>
+    </div>
   </div>
   <div class="row">
-    <div class="col-md-8">
-      <%= @blog.body %>
+    <div class="col-md-12 mt-4">
+      <h6><%= @blog.body %></h6>
     </div>
   </div>
 </div>

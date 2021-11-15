@@ -2,6 +2,36 @@
 <%= render 'layouts/nav' %>
 
 <div class="container">
-  <h2>日記を投稿</h2>
-  <%= render 'form', blog: @blog %>
+  <div class="row">
+    <div class="col-md-4 mt-4">
+      <h2>日記を投稿</h2>
+        <%= render 'form', blog: @blog %>
+    </div>
+    <div class="col-md-8 mt-4">
+      <h2>びがぽ日記</h2>
+      <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th class="col-md-5">タイトル</th>
+            <th class="col-md-2">エディター</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @blogs.each do |blog| %>
+            <tr>
+              <td>
+                <h4><%= link_to blog.title, blog_path(blog), class: "blog_#{blog.id}" %></h4>
+              </td>
+              <td>
+                <h6><%= blog.name %></h6>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><%= truncate(blog.body, length:60) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

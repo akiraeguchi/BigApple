@@ -1,0 +1,26 @@
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th class="col-md-6"><h4>タイトル</h4></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% videos.each do |video| %>
+      <tr>
+        <td>
+          <h4><%= link_to video.title, video_path(video), class: "video_#{video.id}" %></h4>
+        </td>
+        <td rowspan="3">
+          <iframe width="350" height="250" src="https://www.youtube.com/embed/<%= video.youtube %>" frameborder="0" allowfullscreen></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2", style="word-break: break-all">
+          <h6><%= video.body %></h6>
+        </td>
+      </tr>
+      <tr></tr>
+    <% end %>
+  </tbody>
+</table>
