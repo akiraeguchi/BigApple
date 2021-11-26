@@ -12,8 +12,9 @@
       <table class="table table-inverse">
         <thead>
           <tr>
-            <th class="col-md-5">タイトル</th>
-            <th class="col-md-2">投稿者</th>
+            <th class="col-md-7">タイトル</th>
+            <th class="col-md-3">投稿者</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -25,9 +26,12 @@
               <td>
                 <h6><%= blog.name %></h6>
               </td>
+              <td>
+                <h6><%= blog.created_at.strftime("%Y-%m-%d") %></h6>
+              </td>
             </tr>
             <tr>
-              <td colspan="2"><%= truncate(blog.body, length:60) %></td>
+              <td colspan="3"><%= truncate(blog.body, length:60) %></td>
             </tr>
           <% end %>
         </tbody>

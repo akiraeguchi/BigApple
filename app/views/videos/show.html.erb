@@ -3,15 +3,18 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
       <h2 class="mt-4"><%= @video.title %></h2>
+    </div>
+    <div class="col-md-4">
+      <h5 class="mt-5"><%= @video.video_date.strftime("%Y-%m-%d") %></h5>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <table>
         <td>
-          <iframe width="700" height="500" src="https://www.youtube.com/embed/<%= @video.youtube %>" class="mx-auto mt-4" frameborder="0" allowfullscreen></iframe>
+          <iframe width="700" height="500" src="https://www.youtube.com/embed/<%= @video.youtube %>" class="mx-auto mt-3" frameborder="0" allowfullscreen></iframe>
         </td>
         <td style="word-break: break-all">
           <h4 class="ml-4"><%= @video.body %></h4>

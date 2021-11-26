@@ -34,9 +34,10 @@ ActiveRecord::Schema.define(version: 2021_11_09_073807) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "body"
-    t.string "youtube"
+    t.string "youtube", null: false
+    t.datetime "video_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

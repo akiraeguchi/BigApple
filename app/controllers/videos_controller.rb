@@ -2,7 +2,7 @@ class VideosController < ApplicationController
 
   def index
     @video = Video.new
-    @videos = Video.all
+    @videos = Video.all.order(video_date: :desc)
   end
 
   def show
@@ -45,7 +45,7 @@ class VideosController < ApplicationController
 
   private
   def video_params
-    params.require(:video).permit(:title, :body, :youtube)
+    params.require(:video).permit(:title, :body, :youtube, :video_date)
   end
 
 end

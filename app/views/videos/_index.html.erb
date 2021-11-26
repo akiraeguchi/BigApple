@@ -11,7 +11,7 @@
         <td>
           <h4><%= link_to video.title, video_path(video), class: "video_#{video.id}" %></h4>
         </td>
-        <td rowspan="3">
+        <td rowspan="4">
           <iframe width="350" height="250" src="https://www.youtube.com/embed/<%= video.youtube %>" frameborder="0" allowfullscreen></iframe>
         </td>
       </tr>
@@ -21,6 +21,11 @@
         </td>
       </tr>
       <tr></tr>
+      <tr>
+        <td>
+          <h6><%= video.video_date.strftime("%Y-%m-%d") %></h6>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
